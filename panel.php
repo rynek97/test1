@@ -10,7 +10,7 @@ if ($_COOKIE['user']=='')
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style>
-input[type=text] {
+input[type=text], select {
   width: 25%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -19,7 +19,7 @@ input[type=text] {
   border-radius: 4px;
   box-sizing: border-box;
 }
-input[type=password] {
+input[type=file] {
   width: 25%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -67,16 +67,16 @@ div {
   background-color: #f2f2f2;
   padding: 20px;
 }
+</style>
 <BODY>
 <div>
 User's panel
 <a href="logowanie.php">Logout</a></br>
-
 <form method="POST" action="panel.php">
 <br>
 File name: <br>
-<input type="text" name="nazwa_folderu" maxlength="20" size="10"><br>
-<input type="submit" value="Utwórz"/>
+<input type="text" name="nazwa_folderu" maxlength="20" size="10">
+<input type="submit" value="Create"/><br>
 </form>
 <?php
 $nazwa= $_POST['nazwa_folderu'];
@@ -103,7 +103,7 @@ if (!$polaczenie) {
 			if(!file_exists("./$user/$katalog"))
 			{
 				mkdir("./$user/$katalog", 0777);
-				echo "<br>File created $nazwa</br>";
+				echo "<br>File created $nazwa</br><br>";
 				mysqli_query($polaczenie, "INSERT INTO dirs (nazwa,user) values ('$katalog','$user')"); 
 				
 			}else
@@ -127,8 +127,8 @@ while ($wiersz = mysqli_fetch_array ($result))
 				echo"<option  value='$id'>$id</option>";
 			}
 			
-echo"<input type='file' name='plik'/>";
-echo"<input type='submit' value='Wyślij plik'/>";
+echo"<input type='file' name='plik'/><br>";
+echo"<input type='submit' value='Send file'/>";
 echo"</form>";
 echo"<form method='POST' action='pobieranie.php'>";
 echo"<select name='pobieranie'>";
@@ -140,7 +140,7 @@ while ($wiersz = mysqli_fetch_array ($result))
 				echo $id=$wiersz[0];
 				echo"<option  value='$id'>$id</option>";
 			}
-echo"<input type='submit' value='Go to your dir'/>";
+echo"<br><input type='submit' value='Go to your dir'/>";
 echo"</form>";
 
 echo 'Logged as: '.$_COOKIE['user'];

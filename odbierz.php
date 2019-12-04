@@ -14,7 +14,7 @@ if (!$polaczenie) {
 	exit;
 }
 
-$max_rozmiar = 1000;
+$max_rozmiar = 100000;
 
 if (is_uploaded_file($_FILES['plik']['tmp_name']))
 {

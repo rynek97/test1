@@ -68,6 +68,7 @@ div {
 }
 </style>
 <BODY>
+<div>
 Cloud Sign up
 <form method="post" action="weryfikuj.php">
 Login
@@ -78,5 +79,6 @@ Password
 </form>
 <a href="rejestracja.php">Registration</a></br>
 <a href='index.php'>Back</a></br>
+</div>
 </BODY>
 </HTML>

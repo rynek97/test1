@@ -111,10 +111,17 @@ while ($wiersz = mysqli_fetch_array ($rezultat))
 					exit();
 				}
 			}
+			
+			
+			
+			
+			
+			
+			
 mysqli_close($polaczenie);
 echo "Input data is wrong";
 }
-}
+
 ?>
 </BODY>
 </HTML>

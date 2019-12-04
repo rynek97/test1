@@ -1,6 +1,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
 <head>
 <Title>Rynek</Title>
+<div>
+<a href="logowanie.php">Sign in</a></br>
+<a href="rejestracja.php">Registration</a></br>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</div>
 </head>
 <style>
 input[type=text] {
@@ -60,11 +65,8 @@ div {
   background-color: #f2f2f2;
   padding: 20px;
 }
+</style>
 <BODY>
-<div>
-<a href="logowanie.php">Sign in</a></br>
-<a href="rejestracja.php">Registration</a></br>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</div>
+
 </BODY>
 </HTML>
